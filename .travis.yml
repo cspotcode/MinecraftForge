@@ -16,5 +16,7 @@ script:
  - 'git remote add pushto https://${GHUSER}@github.com/cspotcode/MinecraftForge.git'
  - 'git remote -v'
  - 'git config --add core.askpass "./askpass.sh"'
- - 'echo "echo ${GHPASS}" > askpass.sh'
+ - 'echo "#!/bin/bash" > askpass.sh'
+ - 'echo "echo ${GHPASS}" >> askpass.sh'
+ - 'chmod +x askpass.sh'
  - 'git push pushto gh-pages'
