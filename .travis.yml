@@ -12,6 +12,7 @@ script:
  - 'git reset --hard'
  - 'git checkout gh-pages'
 # Move docs into the git repo
+ - 'rm -rf ./out'
  - 'mv -f ../out ./out'
 # Commit all docs
  - 'git add *'
