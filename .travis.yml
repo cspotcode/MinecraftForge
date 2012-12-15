@@ -9,7 +9,6 @@ script:
  - 'git reset --hard'
  - 'git checkout gh-pages'
  - 'mv -f ../out ./out'
-# - 'echo "foobar" > temp.txt'
  - 'git add *'
  - 'git commit -m "Updating Javadoc from Travis-CI"'
  - 'echo ${GHUSER}'
