@@ -3,8 +3,8 @@ env:
   global: 
     secure: "O5W5SYay0lju0WAyIy5IbT+pMjAGrgMbDn/a5q6J/nF6d7xrWuJ9YbxXsdg4\n1gXQW2fB5ZIJ69MgSekaEeckvF5NPWJJ0BsIIjzdo6bn0372YGWKx+zmPU3w\nSa232qZmPgfO3VW/ZoL6W7O7cyvqAZ+y13W+ybKeYJOB9ME7deQ="
 script:
- - 'javadoc -d ./out/common -sourcepath ./common -subpackages net.minecraftforge || true'
- - 'javadoc -d ./out/client -sourcepath ./client -subpackages net.minecraftforge:ibxm:paulscode || true'
+ - 'bash -c "javadoc -d ./out/common -sourcepath ./common -subpackages net.minecraftforge || true"'
+ - 'bash -c "javadoc -d ./out/client -sourcepath ./client -subpackages net.minecraftforge:ibxm:paulscode || true"'
  - 'mv ./out ../out'
  - 'git reset --hard'
  - 'git checkout gh-pages'
