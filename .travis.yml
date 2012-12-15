@@ -12,7 +12,7 @@ script:
 # - 'echo "foobar" > temp.txt'
  - 'git add *'
  - 'git commit -m "Updating Javadoc from Travis-CI"'
- - 'git remote add pushto https://${GHUSER}@github.com/cspotcode/MinecraftForge.git > /dev/null 2>&1'
+ - 'git remote add pushto https://${GHUSER}@github.com/cspotcode/MinecraftForge.git'
  - 'git config --add core.askpass "./askpass.sh"'
  - 'echo "echo ${GHPASS}" > askpass.sh'
  - 'git push pushto gh-pages'
