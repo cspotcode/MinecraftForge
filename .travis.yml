@@ -1,3 +1,4 @@
+language: java
 script:
- - 'javadoc -d ./out/common -sourcepath ./common'
- - 'javadoc -d ./out/client -sourcepath ./client'
+ - 'javadoc -d ./out/common -sourcepath ./common net'
+ - 'javadoc -d ./out/client -sourcepath ./client net:ibxm:paulscode'
