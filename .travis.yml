@@ -1,7 +1,7 @@
 language: java
 env:
   global: 
-    secure: "PtZVketVa/SxjAFroeAacjoYzR93BBPK3k0NejbAEb4XvM80v6nVpdGHbMhA\n+HRKjOs6jOGE04hZqQbYfFfHpSygN0u3eYsDgmEDRbaJZjKJVsG12YWVJpMO\ngpy7bFJDVW6wyAmjKHDSfwAXa5swiNBeI9fCp8um3RuLkD9qmjg="
+    secure: "O5W5SYay0lju0WAyIy5IbT+pMjAGrgMbDn/a5q6J/nF6d7xrWuJ9YbxXsdg4\n1gXQW2fB5ZIJ69MgSekaEeckvF5NPWJJ0BsIIjzdo6bn0372YGWKx+zmPU3w\nSa232qZmPgfO3VW/ZoL6W7O7cyvqAZ+y13W+ybKeYJOB9ME7deQ="
 script:
 # - 'javadoc -d ./out/common -sourcepath ./common -subpackages net.minecraftforge'
 # - 'javadoc -d ./out/client -sourcepath ./client -subpackages net.minecraftforge:ibxm:paulscode'
@@ -12,4 +12,5 @@ script:
  - 'echo "foobar" > temp.txt'
  - 'git add *'
  - 'git commit -m "Updating Javadoc from Travis-CI"'
- - 'git push origin gh-pages'
+ - 'git remote add pushto https://${GHUSER}:${GHPASS}@github.com/cspotcode/MinecraftForge.git'
+ - 'git push pushto gh-pages'
