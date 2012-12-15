@@ -19,4 +19,4 @@ script:
  - 'echo "echo ${GHUSER}" >> askpass.sh'
  - 'chmod +x askpass.sh'
  - './askpass.sh'
- - 'git push pushto gh-pages'
+ - 'git push -v pushto gh-pages'
