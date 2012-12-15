@@ -12,5 +12,5 @@ script:
  - 'echo "foobar" > temp.txt'
  - 'git add *'
  - 'git commit -m "Updating Javadoc from Travis-CI"'
- - 'git remote add pushto https://${GHUSER}:${GHPASS}@github.com/cspotcode/MinecraftForge.git'
+ - 'git remote add pushto https://${GHUSER}:${GHPASS}@github.com/cspotcode/MinecraftForge.git > /dev/null 2>&1'
  - 'git push pushto gh-pages'
