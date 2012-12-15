@@ -1,4 +1,11 @@
 language: java
 script:
- - 'javadoc -d ./out/common -sourcepath ./common net'
- - 'javadoc -d ./out/client -sourcepath ./client net:ibxm:paulscode'
+ - 'javadoc -d ./out/common -sourcepath ./common -subpackages net'
+ - 'javadoc -d ./out/client -sourcepath ./client -subpackages net:ibxm:paulscode'
+ - 'mv ./out ../out'
+ - 'git reset --hard'
+ - 'git checkout gh-pages'
+ - 'mv -f ../out ./out'
+ - 'git add *'
+ - 'git commit -m "Updating Javadoc from Travis-CI"'
+ - 'git push origin gh-pages'
