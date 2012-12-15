@@ -3,13 +3,13 @@ env:
   global: 
     secure: "O5W5SYay0lju0WAyIy5IbT+pMjAGrgMbDn/a5q6J/nF6d7xrWuJ9YbxXsdg4\n1gXQW2fB5ZIJ69MgSekaEeckvF5NPWJJ0BsIIjzdo6bn0372YGWKx+zmPU3w\nSa232qZmPgfO3VW/ZoL6W7O7cyvqAZ+y13W+ybKeYJOB9ME7deQ="
 script:
-# - 'javadoc -d ./out/common -sourcepath ./common -subpackages net.minecraftforge'
-# - 'javadoc -d ./out/client -sourcepath ./client -subpackages net.minecraftforge:ibxm:paulscode'
-# - 'mv ./out ../out'
+ - 'javadoc -d ./out/common -sourcepath ./common -subpackages net.minecraftforge'
+ - 'javadoc -d ./out/client -sourcepath ./client -subpackages net.minecraftforge:ibxm:paulscode'
+ - 'mv ./out ../out'
  - 'git reset --hard'
  - 'git checkout gh-pages'
-# - 'mv -f ../out ./out'
- - 'echo "foobar" > temp.txt'
+ - 'mv -f ../out ./out'
+# - 'echo "foobar" > temp.txt'
  - 'git add *'
  - 'git commit -m "Updating Javadoc from Travis-CI"'
  - 'git remote add pushto https://${GHUSER}:${GHPASS}@github.com/cspotcode/MinecraftForge.git > /dev/null 2>&1'
