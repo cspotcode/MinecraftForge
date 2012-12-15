@@ -1,0 +1,3 @@
+script:
+ - 'javadoc -d ./out/common -sourcepath ./common'
+ - 'javadoc -d ./out/client -sourcepath ./client'
