@@ -20,15 +20,18 @@ script:
  - 'echo ${GHUSER}'
 
 # Setup git to push back to github
- - 'git remote add pushto https://${GHUSER}@github.com/cspotcode/MinecraftForge.git'
+ - 'git remote add pushto https://github.com/cspotcode/MinecraftForge.git'
  - 'git remote -v'
 # - 'echo "#!/bin/bash" > askpass.sh'
- - 'echo "echo ${GHPASS}" >> askpass.sh'
- - 'chmod +x askpass.sh'
- - 'sudo apt-get install realpath'
- - 'git config --add core.askpass "`realpath askpass.sh`"'
- - 'git config --list'
+# - 'echo "echo ${GHPASS}" >> askpass.sh'
+# - 'chmod +x askpass.sh'
+# - 'sudo apt-get install realpath'
+# - 'git config --add core.askpass "`realpath askpass.sh`"'
+# - 'git config --list'
 # - './askpass.sh'
+ - 'echo "machine github.com" >> ~/.netrc'
+ - 'echo "login ${GHUSER}" >> ~/.netrc'
+ - 'echo "password ${GHPASS}" >> ~/.netrc'
 
 # Push docs to Github
  - 'git push -v pushto gh-pages'
