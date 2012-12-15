@@ -3,20 +3,31 @@ env:
   global: 
     secure: "O5W5SYay0lju0WAyIy5IbT+pMjAGrgMbDn/a5q6J/nF6d7xrWuJ9YbxXsdg4\n1gXQW2fB5ZIJ69MgSekaEeckvF5NPWJJ0BsIIjzdo6bn0372YGWKx+zmPU3w\nSa232qZmPgfO3VW/ZoL6W7O7cyvqAZ+y13W+ybKeYJOB9ME7deQ="
 script:
+# Generate Javadocs
  - 'bash -c "javadoc -d ./out/common -sourcepath ./common -subpackages net.minecraftforge || true"'
  - 'bash -c "javadoc -d ./out/client -sourcepath ./client -subpackages net.minecraftforge:ibxm:paulscode || true"'
+# Move docs out of the git repo
  - 'mv ./out ../out'
+# Switch to the Github pages branch
  - 'git reset --hard'
  - 'git checkout gh-pages'
+# Move docs into the git repo
  - 'mv -f ../out ./out'
+# Commit all docs
  - 'git add *'
  - 'git commit -m "Updating Javadoc from Travis-CI"'
+
  - 'echo ${GHUSER}'
+
+# Setup git to push back to github
  - 'git remote add pushto https://${GHUSER}@github.com/cspotcode/MinecraftForge.git'
  - 'git remote -v'
- - 'git config --add core.askpass "`realpath askpass.sh`"'
 # - 'echo "#!/bin/bash" > askpass.sh'
  - 'echo "echo ${GHPASS}" >> askpass.sh'
  - 'chmod +x askpass.sh'
+ - 'sudo apt-get install realpath'
+ - 'git config --add core.askpass "`realpath askpass.sh`"'
 # - './askpass.sh'
+
+# Push docs to Github
  - 'git push -v pushto gh-pages'
