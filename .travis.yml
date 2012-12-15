@@ -1,7 +1,7 @@
 language: java
 script:
- - 'javadoc -d ./out/common -sourcepath ./common -subpackages net'
- - 'javadoc -d ./out/client -sourcepath ./client -subpackages net:ibxm:paulscode'
+ - 'javadoc -d ./out/common -sourcepath ./common -subpackages net.minecraftforge'
+ - 'javadoc -d ./out/client -sourcepath ./client -subpackages net.minecraftforge:ibxm:paulscode'
  - 'mv ./out ../out'
  - 'git reset --hard'
  - 'git checkout gh-pages'
