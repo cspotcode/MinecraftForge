@@ -1,7 +1,7 @@
 language: java
 env:
   global: 
-    secure: "O5W5SYay0lju0WAyIy5IbT+pMjAGrgMbDn/a5q6J/nF6d7xrWuJ9YbxXsdg4\n1gXQW2fB5ZIJ69MgSekaEeckvF5NPWJJ0BsIIjzdo6bn0372YGWKx+zmPU3w\nSa232qZmPgfO3VW/ZoL6W7O7cyvqAZ+y13W+ybKeYJOB9ME7deQ="
+    secure: "Q0OReCmeW8OoxdvLEAc5wawYMLhApNSB4kfi2RMjye3XpVn7vnWRK+fCcgeW\nIGoo6mCgYBs7Oc4SVEQI82gV3Ii0R5Fi2AKroayzgv0lainC0phbjg9kgDUw\nXavnNlQSiEy5vuFrhhZNu2nZnHkeccFQfnLhb/bLxcLJove8R7I="
 script:
 # Generate Javadocs
  - 'bash -c "javadoc -d ./out/common -sourcepath ./common -subpackages net.minecraftforge || true"'
